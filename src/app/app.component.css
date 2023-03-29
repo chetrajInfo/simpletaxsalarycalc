@@ -5,6 +5,12 @@
     box-sizing: border-box;
     font-family:  Roboto;
 }
+.main-container{
+    width:96%;
+    margin: 0 2%;
+    height: 100vh;
+    background-color: rgb(63, 66, 69);
+}
 
 .container{
     display: flex;
@@ -51,7 +57,7 @@ input[type="text"], select{
 @media screen and (max-width: 600px) {
 
     form{
-       height:auto;
+       height:190px;
        width:260px;
     }
 
