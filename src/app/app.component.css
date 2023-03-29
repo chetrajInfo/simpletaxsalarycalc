@@ -42,5 +42,33 @@ input[type="text"], select{
     font-size: 18px;
     font-weight: bold;
     padding-right:3px;
+    cursor: pointer;
 }
 
+
+/*this is screen in between 599 and 700*/
+/* Styles for screens with a width of 600px or less */
+@media screen and (max-width: 600px) {
+
+    form{
+       height:auto;
+       width:260px;
+    }
+
+    label{
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    input[type="button"], button{
+        height: 20px;
+        width: 49px;
+    }
+    input[type="text"], select{
+        height: 20px;
+        width: 49px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+  }
