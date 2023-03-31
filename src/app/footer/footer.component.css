@@ -1,0 +1,15 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Roboto;
+}
+.fooap{
+  
+   width: 96%;
+   height:126px;
+   background-color: grey;
+   margin-left:2%;
+}
