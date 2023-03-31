@@ -13,3 +13,57 @@
    background-color: grey;
    margin-left:2%;
 }
+.logo-link{
+    display: inline-block;
+    padding-left:30px;
+    font-size: large;
+    text-decoration:underline;
+    margin-top:20px;
+}
+.onright{
+    float: right;
+    display: block;
+   
+}
+.abtme, .cont, .msgus{
+    margin-right:20px;
+    padding-top: 15px;
+    font-size: large;
+}
+.cpr{
+    margin-top:60px;
+    padding-left:3px;
+ }
+ fa-icon{
+    font-size: 21px;
+    margin-left: 2px;
+ }
+
+ @media only screen and (max-width:950px) {
+ 
+    .logo-link{
+        display: block;
+        padding-left:10px;
+        font-size: 15px;
+        text-decoration:underline;
+        margin-top:0;
+        padding-top:9px;
+        font-weight: bold;
+    }
+  
+  
+    .abtme, .cont, .msgus{
+        margin-right:17px;  
+        display: inline; 
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .cpr{
+        margin-top:20px;
+        font-size: small;
+     }
+     fa-icon{
+        font-size: 17px;
+        margin-left:1px;
+     }
+ }
