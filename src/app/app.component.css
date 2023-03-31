@@ -36,6 +36,7 @@ form{
     flex-direction: row;
     align-items: center;
     gap:10px;
+    margin-left:60px;
    
 }
 input[type="button"], button{
@@ -56,6 +57,24 @@ input[type="text"], select{
     width:49px;
     text-align: center;
 }
+img{
+    height: 30px;
+    width: 30px;   
+  }
+/*
+  img[title]:hover:after {
+    content: attr(title);
+  
+  }
+  */
+
+  img:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    font-weight: bold;
+  }
+  
+
 
 
 /*this is screen in between 599 and 700*/
@@ -82,5 +101,12 @@ input[type="text"], select{
         font-size: 14px;
         font-weight: bold;
     }
+    .form-group{
+        margin-left:20px;
+    }
+    img{
+        height:18px;
+        width:18px;   
+      }
     
   }
