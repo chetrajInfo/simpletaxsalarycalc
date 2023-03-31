@@ -8,17 +8,19 @@
       <h3>Salary Calculation.</h3>
       <div class="form-group">
         <label for="workperday">Work Hours/Day</label>
-        <input type="text" id="tx1" class="ctx1" value="" name="workperday" />
+        <input type="number" id="workperday" class="ctx1" name="workperday" [(ngModel)]="workperday" >
         <label>Hrs.</label>
       </div>
       <div class="form-group">
         <label for="workperweek">Work/Week</label>
-        <input type="text" id="tx2" class="ctx2" value="" name="workperweek" />
+        <input type="number" id="workperweek" class="ctx2" name="workperweek"  [(ngModel)]="workperweek" >
         <label>Days</label>
       </div>
       <div class="form-group">
         <label for="totalannualpack">Annual Package</label>
-        <input type="text" id="tx3" class="ctx3" value="" name="totalannualpack" />
+        <input type="number" id="totalannualpack" class="ctx3" name="totalannualpack"  [(ngModel)]="totalannualpack">
+        <label for="dollarsign">$</label>
+        <!--
         <select id="select1" name="select1">
           <option value="usdollar" selected>$</option>
           <option value="euro">&#8364;</option>
@@ -28,6 +30,7 @@
           <option value="rupees">&#x20B9;</option>
           <option value="rand">R</option>
         </select>
+      -->
       </div>
       <div class="form-group">
         <label for="calculateyear">Calcualte For</label>
@@ -39,14 +42,15 @@
         <label>Year/s</label>
       </div>
       <div class="form-group">
-        <input type="button" id="ckbtn" name="chck" value="Check" />
-        <input type="button" id="cnbtn" name="canc" value="Cancel" />
-        <button type="submit" id="save">Save</button>
-    
-          <img src="assets/images/info2.png"  title="Save button only active when login account."/>
+        <input type="button" id="ckbtn" name="chck" value="Check" (click)="showresult()"  >
+        <input type="button" id="cnbtn" name="canc" value="Cancel" (click)="cancel()" >
+        <button type="submit" id="save" disabled >Save</button>
+      <img src="assets/images/info2.png" title="Save Active When Login." >
     
       </div>
     </form>
+    <div id="res1" [ngStyle]="{ 'display': elementVisible ? 'block' : 'none' }">Hourly Per Rate is: {{result}}</div>
+    <div id="res2" [ngStyle]="{ 'display': elementError ? 'block' : 'none' }">All Value Must be greater than Zero.</div>
   </div>
 
 </div>
