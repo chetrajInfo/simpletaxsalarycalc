@@ -58,8 +58,9 @@ button{
     font-size: medium;
 }
  select {
-    width:49px;
+    width:140px;
     text-align: center;
+    font-size: 15px;
 }
 img{
     height: 30px;
@@ -70,14 +71,14 @@ img{
     opacity: 0.6;
     font-weight: bold;
   }
- #res1, #res2{
+ #res1, #res2,#res3, #res4,#res5, #res6,#res7{
     padding-top: 20px;
     display: none;
     color:white;
     font-size: 17px;
     font-weight: bold;
  }
- #res2{
+ #res7{
     color:red;
  }
 /*
@@ -133,5 +134,10 @@ img{
       
         font-weight: normal;
       }
+      select {
+        width:80px;
+        text-align: center;
+        font-size: 11px;
+    }
     
   }
