@@ -22,7 +22,7 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:250px;
+    height:300px;
     width: 360px;
     background-color: antiquewhite;
     gap: 10px;
@@ -71,14 +71,14 @@ img{
     opacity: 0.6;
     font-weight: bold;
   }
- #res1, #res2,#res3, #res4,#res5, #res6,#res7{
+ #res1, #res2,#res3, #res4,#res5, #res6,#res7,#res8{
     padding-top: 20px;
     display: none;
     color:white;
     font-size: 17px;
     font-weight: bold;
  }
- #res7{
+ #res8{
     color:red;
  }
 /*
@@ -103,7 +103,7 @@ img{
 @media screen and (max-width: 600px) {
 
     form{
-       height:190px;
+       height:215px;
        width:260px;
     }
 

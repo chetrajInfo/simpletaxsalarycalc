@@ -1,32 +1,46 @@
-
-
 <div class="main-container">
   <app-header></app-header>
   <div class="container">
 
     <form autocomplete="off">
       <h3>Salary Calculation.</h3>
+
       <div class="form-group">
         <label for="calculateyear">Calcualte For</label>
-        <select id="select2" name="select2">
-          <option value="hrs_rate" id="yr1">Hourly Rate</option>
-          <option value="hrs_toyear" id="yr2">Hourly to Annual Pack</option>
+        <!--Added New text box to check whether it work or not selection
+        <select (change)="onSelectedOptionChange()">
+          <option value ="">Choose Options</option>
+          <option value ="option2">Rate Per Hour</option>
+          <option value ="option3">Yearly Package</option>
         </select>
-       
+      -->
+      <select [(ngModel)]="selectedOption" (ngModelChange)="onSelectedOptionChange()" [ngModelOptions]="{standalone: true}">
+        <option id ="options" name="options" *ngFor="let option of options" [value]="option">{{option}}</option>
+      </select>
+
       </div>
+        <div class="form-group">
+          <label for="per_hour">Expecting Per Hour</label>
+          <input [(ngModel)]="per_hour" name="per_hour" type="number"  min="1" [disabled]="disable1">
+          <label for="dollarsign">$</label>
+        </div>
+   
+        <!--Ending of new added of code-->
+
+     
       <div class="form-group">
         <label for="workperday">Work Hours/Day</label>
-        <input type="number" max="24" min="0" id="workperday" class="ctx1" name="workperday" [(ngModel)]="workperday" >
+        <input [(ngModel)]="workperday" name="workperday" type="number" max="24" min="0" id="workperday"    [disabled]="disable2">
         <label>Hrs.</label>
       </div>
       <div class="form-group">
         <label for="workperweek">Work/Week</label>
-        <input type="number" max="7" min="0" id="workperweek" class="ctx2" name="workperweek"  [(ngModel)]="workperweek" >
+        <input type="number" max="7" min="0" id="workperweek"  name="workperweek" [(ngModel)]="workperweek" [disabled]="disable3">
         <label>Days</label>
       </div>
       <div class="form-group">
         <label for="totalannualpack">Annual Package</label>
-        <input type="number" id="totalannualpack" class="ctx3" name="totalannualpack"  [(ngModel)]="totalannualpack">
+        <input type="number" id="totalannualpack"  name="totalannualpack" [(ngModel)]="totalannualpack" [disabled]="disable4">
         <label for="dollarsign">$</label>
         <!--
         <select id="select1" name="select1">
@@ -40,23 +54,26 @@
         </select>
       -->
       </div>
- 
+
       <div class="form-group">
-        <input type="button" id="ckbtn" name="chck" value="Check" (click)="showresult()"  >
-        <input type="button" id="cnbtn" name="canc" value="Cancel" (click)="cancel()" >
-        <button type="submit" id="save" disabled >Save</button>
-      <img src="assets/images/info2.png" title="Save Active When Login." >
-    
+        <input type="button" id="ckbtn" name="chck" value="Check" (click)="showresult()">
+        <input type="button" id="cnbtn" name="canc" value="Cancel" (click)="cancel()">
+        <button type="submit" id="save" [disabled]="true">Save</button>
+        <img src="assets/images/info2.png" title="Save Active When Login.">
+
       </div>
+    
     </form>
-    <div id="res1" [ngStyle]="{ 'display': elementVisible1 ? 'block' : 'none' }">Hourly Per Rate is: {{hour_rate}}</div>
-    <div id="res2" [ngStyle]="{ 'display': elementVisible2 ? 'block' : 'none' }">Per Day Rate is: {{per_day}}</div>
-    <div id="res3" [ngStyle]="{ 'display': elementVisible3 ? 'block' : 'none' }">Weekly Rate is: {{weekly_rate}}</div>
-    <div id="res4" [ngStyle]="{ 'display': elementVisible4 ? 'block' : 'none' }">Bi-Weekly Rate is: {{biweek}}</div>
-    <div id="res5" [ngStyle]="{ 'display': elementVisible5 ? 'block' : 'none' }">Monthly Rate is: {{monthly_rate}}</div>
+    <div id="res1" [ngStyle]="{ 'display': elementVisible1 ? 'block' : 'none' }">Hourly Per Rate is: {{hour_rate| number:'1.2-2' }}</div>
+    <div id="res2" [ngStyle]="{ 'display': elementVisible2 ? 'block' : 'none' }">Per Day Rate is: {{per_day| number:'1.2-2' }}</div>
+    <div id="res3" [ngStyle]="{ 'display': elementVisible3 ? 'block' : 'none' }">Weekly Rate is: {{weekly_rate | number:'1.2-2' }}</div>
+    <div id="res4" [ngStyle]="{ 'display': elementVisible4 ? 'block' : 'none' }">Bi-Weekly Rate is: {{biweek | number:'1.2-2' }}</div>
+    <div id="res5" [ngStyle]="{ 'display': elementVisible5 ? 'block' : 'none' }">Monthly Rate is: {{monthly_rate | number:'1.2-2' }}</div>
     <div id="res6" [ngStyle]="{ 'display': elementVisible6 ? 'block' : 'none' }">Total Hours in week is: {{total_hour_perweek}}</div>
-    <div id="res7" [ngStyle]="{ 'display': elementError ? 'block' : 'none' }">All Value Must be greater than Zero.</div>
+    <div id="res7" [ngStyle]="{ 'display': elementVisible7 ? 'block' : 'none' }">Yearly Package is : {{your_annual_package | number:'1.2-2'}}</div>
+    <div id="res8" [ngStyle]="{ 'display': elementError ? 'block' : 'none' }">All Value Must be greater than Zero.</div>
   </div>
+
 
 </div>
 <app-footer></app-footer>
